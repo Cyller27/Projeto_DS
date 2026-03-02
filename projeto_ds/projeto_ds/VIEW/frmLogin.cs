@@ -8,23 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace projeto_ds
+namespace projeto_ds.VIEW
 {
-    public partial class frmPrincipal : Form
+    public partial class frmLogin : Form
     {
-        public frmPrincipal()
+        public frmLogin()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
         }
     }
 }
