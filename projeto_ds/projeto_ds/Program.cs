@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using projeto_ds.VIEW;
+using projeto_ds.FORMS;
 
 namespace projeto_ds
 {
