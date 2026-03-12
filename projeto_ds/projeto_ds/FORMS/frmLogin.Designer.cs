@@ -31,9 +31,9 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtSenha = new System.Windows.Forms.TextBox();
             this.grpLogin = new System.Windows.Forms.GroupBox();
+            this.btnEscondersenha = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnEscondersenha = new System.Windows.Forms.Button();
             this.grpLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,16 @@
             this.grpLogin.TabIndex = 3;
             this.grpLogin.TabStop = false;
             // 
+            // btnEscondersenha
+            // 
+            this.btnEscondersenha.Image = global::projeto_ds.Properties.Resources.icons8_visível_24;
+            this.btnEscondersenha.Location = new System.Drawing.Point(211, 56);
+            this.btnEscondersenha.Name = "btnEscondersenha";
+            this.btnEscondersenha.Size = new System.Drawing.Size(39, 28);
+            this.btnEscondersenha.TabIndex = 3;
+            this.btnEscondersenha.UseVisualStyleBackColor = true;
+            this.btnEscondersenha.Click += new System.EventHandler(this.btnEscondersenha_Click);
+            // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,26 +104,17 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // btnEscondersenha
-            // 
-            this.btnEscondersenha.Image = global::projeto_ds.Properties.Resources.icons8_visível_24;
-            this.btnEscondersenha.Location = new System.Drawing.Point(211, 56);
-            this.btnEscondersenha.Name = "btnEscondersenha";
-            this.btnEscondersenha.Size = new System.Drawing.Size(39, 28);
-            this.btnEscondersenha.TabIndex = 3;
-            this.btnEscondersenha.UseVisualStyleBackColor = true;
-            this.btnEscondersenha.Click += new System.EventHandler(this.btnEscondersenha_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(586, 192);
+            this.ClientSize = new System.Drawing.Size(589, 192);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpLogin);
             this.Name = "frmLogin";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             this.grpLogin.ResumeLayout(false);
             this.grpLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

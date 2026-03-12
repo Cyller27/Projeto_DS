@@ -57,6 +57,8 @@ namespace projeto_ds.FORMS
             else
             {
                 MessageBox.Show("Credenciais inválidas. Tente novamente.");
+                txtSenha.Text = ""; // Limpa o campo de senha
+                txtSenha.Focus(); // Foca o campo de senha para facilitar a nova tentativa
             }
         }
 
@@ -73,5 +75,9 @@ namespace projeto_ds.FORMS
             }
         }
 
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
