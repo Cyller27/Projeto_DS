@@ -110,7 +110,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(589, 204);
+            this.ClientSize = new System.Drawing.Size(589, 191);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.grpLogin);
             this.Name = "frmLogin";
