@@ -158,6 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BANCO\banco.txt" />
+    <None Include="Resources\LIMPA_TUDO__1_-removebg-preview.png" />
+    <None Include="Resources\LIMPA TUDO.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

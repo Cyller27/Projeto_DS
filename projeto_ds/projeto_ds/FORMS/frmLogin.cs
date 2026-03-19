@@ -129,5 +129,10 @@ namespace projeto_ds.FORMS
             */
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
