@@ -1,0 +1,18 @@
+create database cleanall;
+use cleanall;
+
+create table usuario (
+	id int not null auto_increment primary key,
+	nome varchar(15) not null,
+    senha varchar(15)
+);
+
+
+insert into usuario (nome, senha)
+values 
+	('admin', 'admin'),
+    ('felipe', '1234');
+
+select * from usuario;
+drop table usuario;
+
