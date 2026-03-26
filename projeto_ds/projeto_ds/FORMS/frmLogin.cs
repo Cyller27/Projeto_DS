@@ -1,4 +1,22 @@
-﻿using System;
+﻿// Plano (pseudocódigo detalhado):
+// 1. Criar uma variável global acessível de qualquer lugar da aplicação.
+//    - Implementar uma classe estática `Sessao` com propriedade pública `UsuarioId` (int) e opcional `Nome` (string).
+// 2. No processo de login (btnLogin_Click):
+//    - Ler `nome` e `senha` dos campos do formulário.
+//    - Executar uma consulta que retorna o `id_usuario` correspondente ao par (nome, senha).
+//    - Se retornar um id válido:
+//        - Atribuir `Sessao.UsuarioId = id_usuario` e `Sessao.Nome = nome`.
+//        - Abrir o formulário principal e ocultar o formulário de login.
+//    - Se não retornar resultado:
+//        - Mostrar mensagem de erro, limpar e focar o campo de senha.
+//    - Tratar exceções de conexão/consulta e exibir mensagens apropriadas.
+// 3. Mantém-se simples e segura a consulta (parâmetros para evitar SQL Injection).
+// 4. A classe `Sessao` é estática e pode ser usada em qualquer outro formulário:
+//      int id = Sessao.UsuarioId;
+
+// Nota: Este arquivo inclui a definição da classe de sessão (pode ser extraída para um arquivo próprio `Sessao.cs`).
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +30,21 @@ using MySql.Data.MySqlClient;
 
 namespace projeto_ds.FORMS
 {
+    // Classe estática para armazenar dados de sessão globalmente
+    public static class Sessao
+    {
+        // ID do usuário logado; 0 significa nenhum usuário autenticado
+        public static int UsuarioId { get; set; } = 0;
+
+        // Opcional: armazenar nome ou outros dados úteis
+        public static string Nome { get; set; } = string.Empty;
+    }
 
     public partial class frmLogin : Form
     {
-        
-
         public frmLogin()
         {
             InitializeComponent();
-           
         }
 
         private bool mostrarSenha = false;
@@ -31,44 +55,45 @@ namespace projeto_ds.FORMS
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
-        { 
+        {
             txtUsername.Text = "";
             txtUsername.TextChanged -= txtUsername_TextChanged; // Desvincula o evento para evitar loop infinito
         }
-
-  
-
-
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Obtém o nome de usuário e senha do formulário
             string nome = txtUsername.Text.Trim();
             string senha = txtSenha.Text;
+
             // Conexão com o banco de dados
             var strConexao = "server=localhost;uid=root;password=root;database=cleanall";
-            // Verifica as credenciais no banco de dados
+
+            // Verifica as credenciais no banco de dados e obtém o id do usuário
             try
             {
                 using (var conexao = new MySqlConnection(strConexao))
                 {
-                    // Abre a conexão
                     conexao.Open();
-                    // Prepara o comando SQL para verificar as credenciais
+
                     using (var comando = new MySqlCommand(
-                        // A consulta SQL conta quantos registros correspondem ao nome e senha fornecidos
-                        "SELECT COUNT(1) FROM usuario WHERE nome = @nome AND senha = @senha", conexao))
+                        "SELECT id_usuario FROM usuario WHERE nome = @nome AND senha = @senha LIMIT 1", conexao))
                     {
-                        // Adiciona os parâmetros para evitar SQL Injection
                         comando.Parameters.AddWithValue("@nome", nome);
                         comando.Parameters.AddWithValue("@senha", senha);
-                        // Executa o comando e obtém o número de correspondências
-                        int matches = Convert.ToInt32(comando.ExecuteScalar());
-                        // Verifica se houve correspondência
-                        if (matches > 0)
+
+                        var result = comando.ExecuteScalar();
+
+                        if (result != null && result != DBNull.Value)
                         {
+                            int id_usuario = Convert.ToInt32(result);
+
+                            // Armazena o id em variável global (Sessao)
+                            Sessao.UsuarioId = id_usuario;
+                            Sessao.Nome = nome;
+
                             // Credenciais válidas, abre o formulário principal
-                            MessageBox.Show("Login bem-sucedido!");
+                            //MessageBox.Show("Login bem-sucedido! ID: " + id_usuario);
                             var formPrincipal = new frmPrincipal();
                             formPrincipal.Show();
                             this.Hide();

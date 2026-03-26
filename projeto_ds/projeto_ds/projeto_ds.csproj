@@ -97,9 +97,7 @@
   <ItemGroup>
     <Compile Include="DAO\DAO_Usuario.cs" />
     <Compile Include="DTO\DTO_Usuario.cs" />
-    <Compile Include="FORMS\frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="FORMS\frmLogin.cs" />
     <Compile Include="FORMS\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
@@ -158,6 +156,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BANCO\banco.txt" />
+    <None Include="Resources\casa.png" />
+    <None Include="Resources\lista-de-controle.png" />
+    <None Include="Resources\adicionar-produto.png" />
+    <None Include="Resources\pedido.png" />
+    <None Include="Resources\ferramentas.png" />
+    <None Include="Resources\novo-usuario.png" />
+    <None Include="Resources\grupo.png" />
+    <None Include="Resources\lista-de-usuarios.png" />
     <None Include="Resources\LIMPA_TUDO__1_-removebg-preview.png" />
     <None Include="Resources\LIMPA TUDO.png" />
   </ItemGroup>
