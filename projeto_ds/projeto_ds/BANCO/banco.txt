@@ -2,17 +2,22 @@ create database cleanall;
 use cleanall;
 
 create table usuario (
-	id int not null auto_increment primary key,
+	id_usuario int not null auto_increment primary key,
 	nome varchar(15) not null,
-    senha varchar(15)
+    senha varchar(25)
 );
 
 
 insert into usuario (nome, senha)
 values 
 	('admin', 'admin'),
-    ('felipe', '1234');
+    ('felipe', '1234'),
+    ('brendon', '2020'),
+    ('ivan','Palmeirasnãotemmundial');
 
 select * from usuario;
 drop table usuario;
+
+delete from usuario;
+truncate table usuario;
 
