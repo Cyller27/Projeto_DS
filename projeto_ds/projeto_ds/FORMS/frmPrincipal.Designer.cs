@@ -94,6 +94,7 @@
             this.pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
             this.pedidosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.pedidosToolStripMenuItem.Text = "Pedidos";
+            this.pedidosToolStripMenuItem.Click += new System.EventHandler(this.pedidosToolStripMenuItem_Click);
             // 
             // menuToolStripMenuItem
             // 
@@ -115,6 +116,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmPrincipal";
             this.Text = "frmPrincipal";
+            this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

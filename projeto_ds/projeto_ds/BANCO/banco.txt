@@ -7,6 +7,12 @@ create table usuario (
     senha varchar(25)
 );
 
+create table produto(
+	id_produto int not null auto_increment primary key,
+    nome varchar(30) not null,
+    preco decimal(10,2) not null,
+    categoria varchar(30)
+);
 
 insert into usuario (nome, senha)
 values 
@@ -14,9 +20,18 @@ values
     ('felipe', '1234'),
     ('brendon', '2020'),
     ('ivan','Palmeirasnãotemmundial');
+    
+insert into produto (nome, preco, categoria)
+values
+	('Detergente líquido','4','Limpeza Doméstica'),
+	('Sabão em pó','3.5','Limpeza Doméstica'),
+	('Sabonete','2.8','Higiene Pessoal');
 
 select * from usuario;
+select * from produto;
+
 drop table usuario;
+drop table produto;
 
 delete from usuario;
 truncate table usuario;

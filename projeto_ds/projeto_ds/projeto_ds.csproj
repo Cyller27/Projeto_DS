@@ -97,15 +97,33 @@
   <ItemGroup>
     <Compile Include="DAO\DAO_Usuario.cs" />
     <Compile Include="DTO\DTO_Usuario.cs" />
+    <Compile Include="FORMS\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FORMS\frmLogin.cs" />
     <Compile Include="FORMS\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmPedidos.Designer.cs">
+      <DependentUpon>frmPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="FORMS\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FORMS\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMS\frmProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMS\frmProdutos.Designer.cs">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

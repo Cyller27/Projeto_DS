@@ -52,12 +52,16 @@ namespace projeto_ds.FORMS
 
         private void clienteToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+            var formClientes = new frmClientes();
+            formClientes.Show();
+            this.Close();
         }
 
         private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            var formProdutos = new frmProdutos();
+            formProdutos.Show();
+            this.Close();
         }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -69,6 +73,17 @@ namespace projeto_ds.FORMS
         {
             
         }
- 
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formPedidos = new frmPedidos();
+            formPedidos.Show();
+            this.Close();
+    }
     }
 }
