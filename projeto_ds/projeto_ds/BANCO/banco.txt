@@ -17,9 +17,10 @@ create table produto(
 insert into usuario (nome, senha)
 values 
 	('admin', 'admin'),
-    ('felipe', '1234'),
-    ('brendon', '2020'),
-    ('ivan','Palmeirasnãotemmundial');
+    ('Felipe', '1234'),
+    ('Gabriel', '2021'),
+    ('Brendon', '2020'),
+    ('Ivan','amoDS');
     
 insert into produto (nome, preco, categoria)
 values
@@ -29,10 +30,12 @@ values
 
 select * from usuario;
 select * from produto;
-
+update usuario set senha = 'amoDS' where id_usuario = 4;
 drop table usuario;
 drop table produto;
 
 delete from usuario;
 truncate table usuario;
+
+drop database cleanall;
 

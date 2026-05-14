@@ -16,7 +16,7 @@ namespace projeto_ds.FORMS
         public frmPrincipal()
         {
             InitializeComponent();
-            lblTexto.Text = "Bem-vindo ao sistema de gerenciamento de clientes e produtos!\n" + "Trabalho com seriedade e responsabilidade.";
+            lblTexto.Text = "Trabalho com seriedade e responsabilidade";
             string nome = "";
 
             var strConexao = "server=localhost;uid=root;password=root;database=cleanall";
